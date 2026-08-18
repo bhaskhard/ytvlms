@@ -11,7 +11,7 @@
 <body class="bg-white text-slate-900 font-sans antialiased">
 								 <!--  Struggling to keep your pre recorded video live streams running 24/7 without crashing your Computer or Laptop or Mobile? ðŸ’»ðŸ–¥ï¸ðŸ“±ðŸ’¥ We handle 24/7 cloud-hosted YouTube video live stream management for creators.Zero local computer usage required! Check out our page: https://bhaskhard.github.io/ytvsms/ 
 								 
-								 We handle 24/7 cloud-hosted YouTube video live stream management for creators.Zero local computer usage required! Check out our page: https://bhaskhard.github.io/ytvsms/-->
+								 We handle 24/7 Your YouTube Video Live Management Service for creators. Zero local computer usage required! Check out our page: https://bhaskhard.github.io/ytvlms/ -->
 								<!--  
 Run Your YouTube Recorded Video Live Streams 24/7 on Autopilot! 
 
@@ -154,8 +154,8 @@ Letâ€™s grow your channel together! Contact us directly via WhatsApp to get
                         <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Send via WhatsApp
                     </button>
                     <!-- Google Form Submit Button -->
-                    <button type="button" onclick="submitViaGoogleForm()" id="gfBtn" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed" disabled>
-                        <i class="fa-solid fa-file-lines mr-2"></i> Submit to Google Form
+                    <button type="button" onclick="submitViaGoogleForm()" id="gfBtn" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition duration-300 flex items-center justify-center disabled:opacity-50">
+                        <i class="fa-solid fa-file-lines mr-2"></i> Submit in Google Form
                     </button>
                 </div>
             </form>
@@ -176,10 +176,9 @@ Letâ€™s grow your channel together! Contact us directly via WhatsApp to get
         disclaimerCheck.addEventListener('change', function() {
             if (this.checked) {
                 waBtn.disabled = false;
-                gfBtn.disabled = false;
+                
             } else {
                 waBtn.disabled = true;
-                gfBtn.disabled = true;
             }
         });
 
@@ -222,9 +221,9 @@ Letâ€™s grow your channel together! Contact us directly via WhatsApp to get
         }
 
         function submitViaGoogleForm() {
-            if (!validateForm()) return;
+          //  if (!validateForm()) return;
 
-            const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSc4VsXV4WmAc2Ewiv4Tv4qekuU2iKzEjAO2QQQRY6x0ps9oLg/viewform?usp=header";
+            const googleFormURL = "https://forms.gle/mGdmb18fSrEVYZFc8";
             window.open(googleFormURL, '_blank');
         }
     </script>
