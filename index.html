@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24/7 YouTube Video Stream Management Service - ytvsms</title>
+    <!-- Tailwind CSS for modern, clean styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased">
+
+    <!-- Header / Hero Section -->
+    <header class="relative overflow-hidden py-20 px-6 text-center bg-gradient-to-b from-slate-100 to-white border-b border-slate-200">
+        <div class="max-w-4xl mx-auto">
+		<h2 class="text-3xl font-bold text-center mb-12 text-slate-900">24/7 YouTube Video Stream Management Service (ytvsms)</h2>
+            <span class="bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Automated 24/7 Broadcasting</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-4 mb-6 tracking-tight text-slate-900">
+                Run Your YouTube Live Streams <span class="text-red-600">24/7 on Autopilot</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-8">
+                Never touch a computer or worry about crashes again. We host, loop, and manage your live video streams reliably in the cloud so you can focus entirely on growing your channel.
+            </p>
+            <a href="#order-form" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition duration-300 text-lg">
+                <i class="fa-solid fa-rocket mr-2"></i> Get Started Today
+            </a>
+        </div>
+    </header>
+
+    <!-- How It Works Section -->
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-slate-900">How Our Service Works</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-xl">
+                <div class="text-red-600 text-3xl mb-4 font-bold">01</div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-900">Send Us Your Video</h3>
+                <p class="text-slate-600">Share your video file via Google Drive or direct link along with your YouTube Stream Key.</p>
+            </div>
+            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-xl">
+                <div class="text-red-600 text-3xl mb-4 font-bold">02</div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-900">We Setup Cloud Stream</h3>
+                <p class="text-slate-600">We configure a secure, uninterrupted cloud instance running 24/7 loop streaming with zero local computer usage.</p>
+            </div>
+            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-xl">
+                <div class="text-red-600 text-3xl mb-4 font-bold">03</div>
+                <h3 class="text-xl font-semibold mb-3 text-slate-900">Watch Your Channel Grow</h3>
+                <p class="text-slate-600">Enjoy continuous watch time and algorithmic momentum while we monitor uptime around the clock.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials & Live Stream Showcase -->
+    <section class="py-16 px-6 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 text-slate-900">See It In Action (Live Client Testimonial)</h2>
+            <p class="text-slate-600 mb-8">This live stream is managed directly through our cloud infrastructure.</p>
+            
+            <!-- Embedded Live YouTube Video Space -->
+            <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/RnEQ4-YTddI?si=-oETaltExjiMRMzs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <p class="text-sm text-slate-500 mt-3"><i class="fa-solid fa-quote-left mr-1"></i> "Running our channel 24/7 used to crash our local PCs. Handing it over to this service completely changed our analytics!" — Satisfied Client</p>
+        </div>
+    </section>
+
+    <!-- Order / Submission Form Section -->
+    <section id="order-form" class="py-16 px-6 max-w-2xl mx-auto">
+        <div class="bg-slate-50 p-8 md:p-10 rounded-2xl border border-slate-200 shadow-2xl">
+            <h2 class="text-2xl font-bold mb-2 text-center text-slate-900">Start Your Stream Order</h2>
+            <p class="text-slate-600 text-center mb-8 text-sm">Fill out your details below to submit instantly via WhatsApp or Google Forms.</p>
+
+            <form id="streamForm" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium mb-2 text-slate-700">Your Name / Business Name</label>
+                    <input type="text" id="clientName" required class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-red-600" placeholder="John Doe">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2 text-slate-700">Your WhatsApp Number (with country code)</label>
+                    <input type="text" id="clientPhone" required class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-red-600" placeholder="+1234567890">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2 text-slate-700">YouTube Channel Link or Title</label>
+                    <input type="text" id="clientChannel" required class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-red-600" placeholder="https://youtube.com/@yourchannel">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2 text-slate-700">Video File Link (Google Drive / Direct Download)</label>
+                    <input type="text" id="clientVideo" required class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-red-600" placeholder="https://drive.google.com/...">
+                </div>
+
+                <!-- Scrollable Disclaimer Box & Checkbox -->
+                <div class="border-t border-slate-200 pt-6 mt-6">
+                    <div class="bg-white p-4 rounded-lg border border-slate-300 text-xs text-slate-600 h-40 overflow-y-auto mb-4 shadow-inner">
+                        <p class="font-bold text-slate-900 text-sm mb-2">Service Agreement & Liability Disclaimer</p>
+                        <p class="mb-2">By engaging with <b>Bhaskhar Devulapalli</b> (hereinafter "Provider") for 24/7 YouTube live stream management services, the client (hereinafter "Client") agrees to the following terms and conditions:</p>
+                        
+                        <p class="font-semibold text-slate-800 mt-2">1. Scope of Service</p>
+                        <p class="mb-2">The Provider agrees to provide technical management services, which include configuring, hosting, and maintaining a cloud-based server instance to loop the Client's provided video file to the Client's specified YouTube channel via a Real-Time Messaging Protocol (RTMP) stream.</p>
+                        
+                        <p class="font-semibold text-slate-800 mt-2">2. Client Responsibilities and Warranties</p>
+                        <p class="mb-1">The Client warrants and represents that:</p>
+                        <ul class="list-disc pl-5 mb-2 space-y-1">
+                            <li>They are the sole owner or legally authorized licensee of all video and audio content provided to the Provider for streaming.</li>
+                            <li>The content does not violate YouTube’s Terms of Service, Community Guidelines, or any intellectual property laws (including copyright and trademark).</li>
+                            <li>They possess the necessary permissions, licenses, and rights to broadcast the content publicly on YouTube.</li>
+                        </ul>
+                        
+                        <p class="font-semibold text-slate-800 mt-2">3. Limitation of Liability and Disclaimer</p>
+                        <p class="mb-2">The Provider offers technical streaming management only. The Client assumes <strong>sole and absolute responsibility</strong> for their YouTube channel's compliance with all platform policies and local/international laws.</p>
+                        <p class="mb-1">The Provider is <strong>NOT</strong> liable for any of the following occurrences:</p>
+                        <ul class="list-disc pl-5 mb-2 space-y-1">
+                            <li><strong>Content ID Claims or Copyright Strikes:</strong> The Provider does not review, monitor, or screen Client content for copyright infringement. Any claims, strikes, or monetization blocks issued by YouTube are the sole responsibility of the Client.</li>
+                            <li><strong>Account Termination or Suspension:</strong> Should YouTube terminate or suspend the Client's channel due to content violations (e.g., repeated copyright strikes, nudity, hate speech, or spam), the Provider holds no liability.</li>
+                            <li><strong>Stream Interruptions by YouTube:</strong> YouTube may, at its sole discretion and without warning, abruptly end, block, or throttle live streams based on automated algorithms or manual review. The Provider is not responsible for these platform-initiated interruptions.</li>
+                            <li><strong>Force Majeure:</strong> The Provider is not liable for streaming downtime caused by unforeseeable events outside their control, including major data center failures, network outages, or acts of God.</li>
+                        </ul>
+                        
+                        <p class="font-semibold text-slate-800 mt-2">4. Indemnification</p>
+                        <p class="mb-2">The Client agrees to indemnify, defend, and hold harmless the Provider, its owners, and affiliates from and against any and all claims, liabilities, damages, losses, and expenses (including legal fees) arising from or in any way connected with the Client's content, including but not limited to claims of copyright infringement, defamation, or violation of YouTube Terms of Service.</p>
+                        
+                        <p class="font-semibold text-slate-800 mt-2">5. Service Termination</p>
+                        <p>Either party may terminate this service agreement at any time with 48 hours' written notice. The Provider reserves the right to immediately terminate service without refund if it discovers the Client is using the infrastructure to stream illegal content or content that facilitates severe harm.</p>
+                    </div>
+                    
+                    <div class="flex items-center space-x-3 text-sm">
+                        <input type="checkbox" id="disclaimerCheck" required class="h-5 w-5 rounded border-slate-300 bg-white text-red-600 focus:ring-red-500">
+                        <label for="disclaimerCheck" class="text-slate-700 select-none">
+                            I have read, understood, and agree to the <span class="font-medium text-red-600">Service Agreement & Liability Disclaimer</span>.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submission Options -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <!-- WhatsApp Submit Button -->
+                    <button type="button" onclick="submitViaWhatsApp()" id="waBtn" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl transition duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Send via WhatsApp
+                    </button>
+                    <!-- Google Form Submit Button -->
+                    <button type="button" onclick="submitViaGoogleForm()" id="gfBtn" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        <i class="fa-solid fa-file-lines mr-2"></i> Submit to Google Form
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-slate-500 text-sm border-t border-slate-200">
+        <p>&copy; 2026-27 "24/7 YouTube Video Stream Management Service". All rights reserved.</p>
+    </footer>
+
+    <!-- Script to handle WhatsApp & Google Form routing with validation -->
+    <script>
+        const disclaimerCheck = document.getElementById('disclaimerCheck');
+        const waBtn = document.getElementById('waBtn');
+        const gfBtn = document.getElementById('gfBtn');
+
+        disclaimerCheck.addEventListener('change', function() {
+            if (this.checked) {
+                waBtn.disabled = false;
+                gfBtn.disabled = false;
+            } else {
+                waBtn.disabled = true;
+                gfBtn.disabled = true;
+            }
+        });
+
+        function validateForm() {
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const channel = document.getElementById('clientChannel').value;
+            const video = document.getElementById('clientVideo').value;
+            const check = document.getElementById('disclaimerCheck').checked;
+
+            if (!name || !phone || !channel || !video) {
+                alert('Please fill out all required text fields.');
+                return false;
+            }
+
+            if (!check) {
+                alert('You must agree to the Service Disclaimer before submitting.');
+                return false;
+            }
+            return true;
+        }
+
+        function submitViaWhatsApp() {
+            if (!validateForm()) return;
+
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const channel = document.getElementById('clientChannel').value;
+            const video = document.getElementById('clientVideo').value;
+
+            const myWhatsAppNumber = "917731969824";
+
+            const message = `*New Stream Order Inquiry*%0A` +
+                            `*Name:* ${encodeURIComponent(name)}%0A` +
+                            `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                            `*Channel:* ${encodeURIComponent(channel)}%0A` +
+                            `*Video Link:* ${encodeURIComponent(video)}`;
+
+            window.open(`https://wa.me/${myWhatsAppNumber}?text=${message}`, '_blank');
+        }
+
+        function submitViaGoogleForm() {
+            if (!validateForm()) return;
+
+            const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSc4VsXV4WmAc2Ewiv4Tv4qekuU2iKzEjAO2QQQRY6x0ps9oLg/viewform?usp=header";
+            window.open(googleFormURL, '_blank');
+        }
+    </script>
+</body>
+</html>
