@@ -3,244 +3,581 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>24/7 YouTube Video Live Management Service - YTVLMS</title>
-    <!-- Tailwind CSS for modern, clean styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Bhaskhar D Â· Autopilot live for YouTube creators</title>
+    <!-- SEO Meta -->
+    <meta name="description" content="Autopilot live video & news for YouTube creators. No hardware, no maintenance. Packages from â‚¹500/month. Boost visitors & monetize.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>â–¶ï¸</text></svg>">
+    <!-- Font & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0b0b;
+            color: #f1f1f1;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* header / nav */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #2a2a2a;
+            flex-wrap: wrap;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+        .logo i {
+            color: #ff0033;
+            font-size: 2rem;
+        }
+        .logo span {
+            background: linear-gradient(135deg, #f9f9f9, #aaaaaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-cta {
+            background: #ffffff10;
+            backdrop-filter: blur(4px);
+            padding: 8px 18px;
+            border-radius: 40px;
+            border: 1px solid #333;
+            color: #eee;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+        .nav-cta i {
+            margin-right: 8px;
+            color: #ff0033;
+        }
+        .nav-cta:hover {
+            background: #ffffff20;
+            border-color: #ff0033;
+        }
+        /* hero */
+        .hero {
+            padding: 60px 0 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-content {
+            flex: 1 1 400px;
+        }
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+        .hero-content h1 i {
+            color: #ff0033;
+        }
+        .hero-content .highlight {
+            background: linear-gradient(135deg, #ff0033, #ff6600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin: 20px 0 30px;
+            max-width: 550px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: #1f1f1f;
+            padding: 8px 20px;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+        }
+        .hero-badge i {
+            color: #ff0033;
+            margin-right: 6px;
+        }
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .btn {
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.25s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: #ff0033;
+            color: #fff;
+            box-shadow: 0 8px 24px #ff003340;
+        }
+        .btn-primary:hover {
+            background: #e6002e;
+            transform: scale(1.02);
+            box-shadow: 0 12px 28px #ff003360;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #444;
+            color: #ddd;
+        }
+        .btn-outline:hover {
+            border-color: #ff0033;
+            background: #ff003310;
+        }
+        .hero-visual {
+            flex: 1 1 300px;
+            display: flex;
+            justify-content: center;
+        }
+        .hero-visual img {
+            max-width: 100%;
+            width: 380px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px -10px #00000080;
+            border: 1px solid #2a2a2a;
+        }
+        /* packages */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 60px 0 20px;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-title i {
+            color: #ff0033;
+            font-size: 2rem;
+        }
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 20px 0 20px;
+        }
+        .package-card {
+            background: #141414;
+            border-radius: 28px;
+            padding: 28px 22px;
+            border: 1px solid #282828;
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .package-card:hover {
+            border-color: #ff003360;
+            background: #1a1a1a;
+            transform: translateY(-4px);
+        }
+        .package-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 10px 0 6px;
+        }
+        .package-card .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #aaa;
+        }
+        .package-card .name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+        .package-card .desc {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            margin: 14px 0 20px;
+            flex: 1;
+        }
+        .package-card .feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ccc;
+            font-size: 0.9rem;
+            margin: 6px 0;
+        }
+        .package-card .feature i {
+            color: #ff0033;
+            width: 18px;
+        }
+        .package-card .extra {
+            border-top: 1px solid #2a2a2a;
+            margin-top: 18px;
+            padding-top: 16px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        .card-cta {
+            margin-top: 22px;
+            background: #ffffff08;
+            border: 1px solid #333;
+            border-radius: 40px;
+            padding: 10px 16px;
+            text-align: center;
+            color: #ddd;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .card-cta i {
+            margin-right: 8px;
+            color: #ff0033;
+        }
+        .card-cta:hover {
+            background: #ff003320;
+            border-color: #ff0033;
+        }
+        .badge-popular {
+            background: #ff0033;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 60px;
+            align-self: flex-start;
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
+        }
+        /* testimonial & live grid */
+        .testimonial-wrap {
+            margin: 60px 0 20px;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin: 30px 0;
+        }
+        .testimonial-item {
+            background: #111;
+            border-radius: 24px;
+            padding: 16px;
+            border: 1px solid #2a2a2a;
+            transition: 0.2s;
+        }
+        .testimonial-item:hover {
+            border-color: #ff003360;
+        }
+        .testimonial-item iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            border: 0;
+            background: #000;
+        }
+        .channel-name {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        .channel-name i {
+            color: #ff0033;
+            font-size: 1.2rem;
+        }
+        .channel-name span {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .channel-name small {
+            color: #999;
+            font-weight: 400;
+            margin-left: auto;
+        }
+        .testimonial-quote {
+            margin-top: 10px;
+            color: #bbb;
+            font-size: 0.95rem;
+            border-left: 3px solid #ff0033;
+            padding-left: 14px;
+        }
+        /* CTA / contact */
+        .cta-section {
+            background: #141414;
+            border-radius: 40px;
+            padding: 48px 36px;
+            margin: 60px 0;
+            border: 1px solid #2a2a2a;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+        .cta-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        .cta-section p {
+            color: #b0b0b0;
+            max-width: 400px;
+        }
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .whatsapp-btn {
+            background: #25D366;
+            color: #fff;
+            border: none;
+        }
+        .whatsapp-btn:hover {
+            background: #1ebe5c;
+            transform: scale(1.02);
+        }
+        .form-btn {
+            background: #ffffff10;
+            border: 1px solid #444;
+            color: #eee;
+        }
+        .form-btn:hover {
+            background: #ffffff20;
+            border-color: #ff0033;
+        }
+        /* footer */
+        .footer {
+            border-top: 1px solid #1f1f1f;
+            padding: 30px 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .footer i {
+            color: #ff0033;
+        }
+        /* responsive */
+        @media (max-width: 680px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+            .cta-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cta-buttons {
+                justify-content: center;
+            }
+        }
+        /* image / logo prompt placeholder */
+        .logo-prompt {
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 12px 20px;
+            border: 1px dashed #444;
+            color: #888;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+        }
+        .logo-prompt i {
+            color: #ff0033;
+        }
+    </style>
 </head>
-<body class="bg-white text-slate-900 font-sans antialiased">
-								 <!--  Struggling to keep your pre recorded video live streams running 24/7 without crashing your Computer or Laptop or Mobile? ðŸ’»ðŸ–¥ï¸ðŸ“±ðŸ’¥ We handle 24/7 cloud-hosted YouTube video live stream management for creators.Zero local computer usage required! Check out our page: https://bhaskhard.github.io/ytvsms/ 
-								 
-								 We handle 24/7 Your YouTube Video Live Management Service for creators. Zero local computer usage required! Check out our page: https://bhaskhard.github.io/ytvlms/ -->
-								<!--  
-Run Your YouTube Recorded Video Live Streams 24/7 on Autopilot! 
-
-Do you want to boost your channel's watch time, algorithmic reach, and audience engagement without keeping your local computer running or worrying about crashes?
-
-We provide reliable, 24/7 cloud-hosted video loop streaming management. 
-
-âœ… 100% Cloud-based (Zero local resource usage)
-âœ… Uninterrupted 24/7 Uptime & Monitoring
-âœ… Perfect for Music, Meditation, Podcasts, & Event Streams
-
-ðŸ‘‰ Check out how it works and order your stream here:
-https://bhaskhard.github.io/ytvsms/
-
-Letâ€™s grow your channel together! Contact us directly via WhatsApp to get started today. -->
-    <!-- Header / Hero Section -->
-    <header class="relative overflow-hidden py-20 px-6 text-center bg-gradient-to-b from-slate-100 to-white border-b border-slate-200">
-        <div class="max-w-4xl mx-auto">
-		<h2 class="text-3xl font-bold text-center mb-12 text-slate-900">24/7 YouTube Video Live Management Service - YTVLMS</h2>
-            <span class="bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Automated 24/7 Broadcasting</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold mt-4 mb-6 tracking-tight text-slate-900">
-                Run Your YouTube Live Streams <span class="text-red-600">24/7 on Autopilot</span>
-            </h1>
-			<p class="text-lg md:text-xl text-slate-600 mb-8">Struggling to keep your live streams running 24/7 without crashing your Computer or Laptop or Mobile? ðŸ’»ðŸ–¥ï¸ðŸ“±ðŸ’¥ We handle 24/7 cloud-hosted YouTube video live stream looping and management for creators. Fully automated, highly reliable, and zero local computer usage required!<!--  Check out our page to set up your channel on autopilot: https://bhaskhard.github.io/ytvsms/ ðŸš€ --></p>
-            <p class="text-lg md:text-xl text-slate-600 mb-8">
-                Never touch a computer or worry about crashes again. We host, loop, and manage your live video streams reliably in the cloud so you can focus entirely on growing your channel.
-            </p>
-            <a href="#order-form" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition duration-300 text-lg">
-                <i class="fa-solid fa-rocket mr-2"></i> Get Started Today
-            </a>
-        </div>
-    </header>
-
-    <!-- How It Works Section -->
-    <section class="py-16 px-6 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12 text-slate-900">How Our Service Works</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-xl">
-                <div class="text-red-600 text-3xl mb-4 font-bold">01</div>
-                <h3 class="text-xl font-semibold mb-3 text-slate-900">Send Us Your Video</h3>
-                <p class="text-slate-600">Share your video file via Google Drive or direct link along with your YouTube Stream Key.</p>
+<body>
+    <div class="container">
+        <!-- NAV -->
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-play-circle"></i>
+                <span>Bhaskhar D</span>
+                <span style="font-size: 0.8rem; background: #1f1f1f; padding: 2px 12px; border-radius: 60px; color: #aaa; -webkit-text-fill-color: #aaa;">software developer</span>
             </div>
-            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-xl">
-                <div class="text-red-600 text-3xl mb-4 font-bold">02</div>
-                <h3 class="text-xl font-semibold mb-3 text-slate-900">We Setup Cloud Stream</h3>
-                <p class="text-slate-600">We configure a secure, uninterrupted cloud instance running 24/7 loop streaming with zero local computer usage.</p>
+            <div>
+                <a href="#packages" class="nav-cta"><i class="fas fa-rocket"></i> Packages</a>
+                <a href="#testimonials" class="nav-cta" style="margin-left: 8px;"><i class="fas fa-video"></i> Live demos</a>
             </div>
-            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-xl">
-                <div class="text-red-600 text-3xl mb-4 font-bold">03</div>
-                <h3 class="text-xl font-semibold mb-3 text-slate-900">Watch Your Channel Grow</h3>
-                <p class="text-slate-600">Enjoy continuous watch time and algorithmic momentum while we monitor uptime around the clock.</p>
-            </div>
-        </div>
-    </section>
+        </nav>
 
-    <!-- Testimonials & Live Stream Showcase -->
-<section class="py-16 px-6 bg-slate-100 border-y border-slate-200">
-    <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-4 text-slate-900">See It In Action (Live Client Testimonials)</h2>
-        <p class="text-slate-600 mb-12">These live streams are managed directly through our cloud infrastructure.</p>
-        
-        <!-- Grid layout for two videos side by side -->
-        <div class="grid md:grid-cols-2 gap-8">
-            
-            <!-- Video 1 -->
-            <div class="flex flex-col">
-                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/RnEQ4-YTddI?si=0ftYoj-45cYWefkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-infinity"></i> 24/7 autopilot Â· no hardware</div>
+                <h1>Turn your <span class="highlight">YouTube</span> live <br><i>â–¶ï¸</i> on autopilot</h1>
+                <p>Attract more visitors, monetize effortlessly. We handle streaming, maintenance & updates. Just provide the stream key.</p>
+                <div class="btn-group">
+                    <a href="#packages" class="btn btn-primary"><i class="fas fa-bolt"></i> Explore packages</a>
+                    <a href="#cta" class="btn btn-outline"><i class="fas fa-comment"></i> Start now</a>
                 </div>
-                <p class="text-sm text-slate-500 mt-3 italic">"Reliable 24/7 streaming!" — Aikyam Spiritual Center</p>
+                <!-- logo prompt placeholder -->
+                <!-- <div class="logo-prompt" style="margin-top: 30px;">
+                    <i class="fas fa-image"></i> Logo prompt: <strong style="color:#ddd;">â€œneon live loop Â· YouTube autopilotâ€</strong> 
+                    <span style="background:#222; padding:2px 10px; border-radius:40px;">AI generated</span>
+                </div> -->
             </div>
+            <div class="hero-visual">
+                <!-- image placeholder with prompt -->
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23121212'/%3E%3Ccircle cx='200' cy='140' r='60' fill='%23ff0033' opacity='0.2'/%3E%3Cpath d='M170 110 L240 140 L170 170 Z' fill='%23ff0033'/%3E%3Ctext x='120' y='240' fill='%23aaaaaa' font-family='Inter' font-size='22' font-weight='600'%3Eâ–¶ï¸ Bhaskhar D%3C/text%3E%3Ctext x='140' y='270' fill='%23666' font-family='Inter' font-size='14'%3Esoftware developer%3C/text%3E%3C/svg%3E"
+                     alt="YouTube Autopilot live streaming illustration" />
+            </div>
+        </section>
 
-            <!-- Video 2 -->
-            <div class="flex flex-col">
-                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/x5U2JCTiNng?si=FdelvhxcxQ7ojXah" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- PACKAGES -->
+        <div id="packages">
+            <div class="section-title"><i class="fas fa-cubes"></i> Choose your autopilot plan</div>
+            <div class="packages-grid">
+                <!-- package 1 -->
+                <div class="package-card">
+                    <!-- <span class="badge-popular">most popular</span> -->
+                    <div class="name">ðŸ“¼ Video Â· loop</div>
+                    <div class="price">â‚¹1,000 <small>/mo</small></div>
+                    <div class="desc">We create the video & run it live in loop. You provide stream key.</div>
+                    <div class="feature"><i class="fas fa-check-circle"></i> Full video production</div>
+                    <div class="feature"><i class="fas fa-check-circle"></i> Loop live 24/7</div>
+                    <div class="feature"><i class="fas fa-check-circle"></i> Change video: â‚¹1,000</div>
+                    <div class="extra">ðŸ“¹ You provide stream key &amp; we handle everything.</div>
+                    <a href="#cta" class="card-cta"><i class="fas fa-arrow-right"></i> Get started</a>
                 </div>
-                <p class="text-sm text-slate-500 mt-3 italic">"Best management service ever." — bhaskhard</p>
+                <!-- package 2 -->
+                <div class="package-card">
+                    <div class="name">ðŸ“¼ Your video Â· loop</div>
+                    <div class="price">â‚¹500 <small>/mo</small></div>
+                    <div class="desc">You supply the video, we make it live in loop.</div>
+                    <div class="feature"><i class="fas fa-check-circle"></i> Upload &amp; loop</div>
+                    <div class="feature"><i class="fas fa-check-circle"></i> Change video: â‚¹500</div>
+                    <div class="extra">ðŸŽ¬ Provide video + stream key.</div>
+                    <a href="#cta" class="card-cta"><i class="fas fa-arrow-right"></i> Get started</a>
+                </div>
+                <!-- package 3 -->
+                <div class="package-card">
+                    <div class="name">ðŸ“° News live (JSON API)</div>
+                    <div class="price">â‚¹500 <small>/mo</small></div>
+                    <div class="desc">We pull JSON data from your API &amp; broadcast live news.</div>
+                    <div class="feature"><i class="fas fa-check-circle"></i> JSON feed + stream key</div>
+                    <div class="feature"><i class="fas fa-check-circle"></i> Autopilot updates</div>
+                    <div class="extra">ðŸ“¡ You provide API endpoint &amp; YT key.</div>
+                    <a href="#cta" class="card-cta"><i class="fas fa-arrow-right"></i> Get started</a>
+                </div>
+                <!-- package 4 -->
+                <div class="package-card">
+                    <div class="name">ðŸ›¢ï¸ News live (Database)</div>
+                    <div class="price">â‚¹1,000 <small>/mo</small></div>
+                    <div class="desc">We connect to your DB, build the news ticker &amp; stream live.</div>
+                    <div class="feature"><i class="fas fa-check-circle"></i> DB connection + coding</div>
+                    <div class="feature"><i class="fas fa-check-circle"></i> Full custom stream</div>
+                    <div class="extra">âš™ï¸ Provide DB details &amp; stream key.</div>
+                    <a href="#cta" class="card-cta"><i class="fas fa-arrow-right"></i> Get started</a>
+                </div>
             </div>
-
         </div>
+
+        <!-- TESTIMONIALS + LIVE GRID -->
+        <div id="testimonials" class="testimonial-wrap">
+            <div class="section-title"><i class="fas fa-users"></i> Live demos &amp; client streams</div>
+            <div class="testimonial-grid">
+                <!-- sample client 1 -->
+                <div class="testimonial-item">
+                    <iframe src="https://www.youtube.com/embed/RnEQ4-YTddI?si=Ud5lb1fhpvQ8EvTn?autoplay=0&mute=1" allowfullscreen></iframe>
+                    <div class="channel-name">
+                        <i class="fab fa-youtube"></i>
+                        <span>Aikyam Spiritual Center</span>
+                        <small>âš¡ 24/7 live chanting</small>
+                    </div>
+                    <div class="testimonial-quote">â€œAutopilot video 10x my watch time.â€</div>
+                </div>
+                <!-- sample client 2 -->
+                <div class="testimonial-item">
+                    <iframe src="https://www.youtube.com/embed/x5U2JCTiNng?si=p7PzFJ12jBox5BB5?autoplay=0&mute=1" allowfullscreen></iframe>
+                    <div class="channel-name">
+                        <i class="fab fa-youtube"></i>
+                        <span>Bhaskhar D</span>
+                        <small>ðŸ”´ 24/7 live chanting</small>
+                    </div>
+                    <div class="testimonial-quote">â€œNo hardware, just stream key. I'm earning more.â€</div>
+                </div>
+                <!-- sample client 3 -->
+                <div class="testimonial-item">
+                    <iframe src="https://www.youtube.com/embed/x5U2JCTiNng?si=p7PzFJ12jBox5BB5?autoplay=0&mute=1" allowfullscreen></iframe>
+                    <div class="channel-name">
+                        <i class="fab fa-youtube"></i>
+                        <span>Bhaskhar D</span>
+                        <small>ðŸ“° 24/7 live news</small>
+                    </div>
+                    <div class="testimonial-quote">â€œJSON news integration worked flawlessly.â€</div>
+                </div>
+                <!-- sample client 4 -->
+                <div class="testimonial-item">
+                    <iframe src="https://www.youtube.com/embed/x5U2JCTiNng?si=p7PzFJ12jBox5BB5?autoplay=0&mute=1" allowfullscreen></iframe>
+                    <div class="channel-name">
+                        <i class="fab fa-youtube"></i>
+                        <span>Bhaskhar D</span>
+                        <small>â­ 24/7 live news</small>
+                    </div>
+                    <div class="testimonial-quote">â€œThey changed my video within hours. Great service.â€</div>
+                </div>
+            </div>
+            <p style="color: #777; font-size: 0.9rem; text-align: center; margin-top: 8px;"><i class="fas fa-info-circle"></i> Click any video to watch live demo (sample streams)</p>
+        </div>
+
+        <!-- CTA / CONTACT -->
+        <div id="cta" class="cta-section">
+            <div>
+                <h2><i class="fas fa-paper-plane" style="color: #ff0033;"></i> Start your autopilot live</h2>
+                <p>Submit your request via WhatsApp or Google Form. Weâ€™ll set up your stream within 24h.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://wa.me/917731969824?text=Hi%2C%20I%20want%20autopilot%20live%20for%20my%20channel" target="_blank" class="btn whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://forms.gle/mGdmb18fSrEVYZFc8" target="_blank" class="btn form-btn"><i class="fas fa-google"></i> Google Form</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div><i class="fas fa-play-circle"></i> Bhaskhar D Â· Autopilot for YouTube creators</div>
+            <div style="display: flex; gap: 20px;">
+                <span><i class="fas fa-check-circle" style="color: #25D366;"></i> No hardware</span>
+                <span><i class="fas fa-check-circle" style="color: #25D366;"></i> 24/7 support</span>
+            </div>
+        </footer>
     </div>
-</section>
-
-    <!-- Order / Submission Form Section -->
-    <section id="order-form" class="py-16 px-6 max-w-2xl mx-auto">
-        <div class="bg-slate-50 p-8 md:p-10 rounded-2xl border border-slate-200 shadow-2xl">
-            <h2 class="text-2xl font-bold mb-2 text-center text-slate-900">Start Your Stream Order</h2>
-            <p class="text-slate-600 text-center mb-8 text-sm">Fill out your details below to submit instantly via WhatsApp or Google Forms.</p>
-
-            <form id="streamForm" class="space-y-6">
-                <div>
-                    <label class="block text-sm font-medium mb-2 text-slate-700">Your Name / Business Name</label>
-                    <input type="text" id="clientName" required class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-red-600" placeholder="John Doe">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2 text-slate-700">Your WhatsApp Number (with country code)</label>
-                    <input type="text" id="clientPhone" required class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-red-600" placeholder="+1234567890">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2 text-slate-700">YouTube Channel Link or Title</label>
-                    <input type="text" id="clientChannel" required class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-red-600" placeholder="https://youtube.com/@yourchannel">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2 text-slate-700">Video File Link (Google Drive / Direct Download)</label>
-                    <input type="text" id="clientVideo" required class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-red-600" placeholder="https://drive.google.com/...">
-                </div>
-
-                <!-- Scrollable Disclaimer Box & Checkbox -->
-                <div class="border-t border-slate-200 pt-6 mt-6">
-                    <div class="bg-white p-4 rounded-lg border border-slate-300 text-xs text-slate-600 h-40 overflow-y-auto mb-4 shadow-inner">
-                        <p class="font-bold text-slate-900 text-sm mb-2">Service Agreement & Liability Disclaimer</p>
-                        <p class="mb-2">By engaging with <b>Bhaskhar Devulapalli</b> (hereinafter "Provider") for 24/7 YouTube live stream management services, the client (hereinafter "Client") agrees to the following terms and conditions:</p>
-                        
-                        <p class="font-semibold text-slate-800 mt-2">1. Scope of Service</p>
-                        <p class="mb-2">The Provider agrees to provide technical management services, which include configuring, hosting, and maintaining a cloud-based server instance to loop the Client's provided video file to the Client's specified YouTube channel via a Real-Time Messaging Protocol (RTMP) stream.</p>
-                        
-                        <p class="font-semibold text-slate-800 mt-2">2. Client Responsibilities and Warranties</p>
-                        <p class="mb-1">The Client warrants and represents that:</p>
-                        <ul class="list-disc pl-5 mb-2 space-y-1">
-                            <li>They are the sole owner or legally authorized licensee of all video and audio content provided to the Provider for streaming.</li>
-                            <li>The content does not violate YouTubeâ€™s Terms of Service, Community Guidelines, or any intellectual property laws (including copyright and trademark).</li>
-                            <li>They possess the necessary permissions, licenses, and rights to broadcast the content publicly on YouTube.</li>
-                        </ul>
-                        
-                        <p class="font-semibold text-slate-800 mt-2">3. Limitation of Liability and Disclaimer</p>
-                        <p class="mb-2">The Provider offers technical streaming management only. The Client assumes <strong>sole and absolute responsibility</strong> for their YouTube channel's compliance with all platform policies and local/international laws.</p>
-                        <p class="mb-1">The Provider is <strong>NOT</strong> liable for any of the following occurrences:</p>
-                        <ul class="list-disc pl-5 mb-2 space-y-1">
-                            <li><strong>Content ID Claims or Copyright Strikes:</strong> The Provider does not review, monitor, or screen Client content for copyright infringement. Any claims, strikes, or monetization blocks issued by YouTube are the sole responsibility of the Client.</li>
-                            <li><strong>Account Termination or Suspension:</strong> Should YouTube terminate or suspend the Client's channel due to content violations (e.g., repeated copyright strikes, nudity, hate speech, or spam), the Provider holds no liability.</li>
-                            <li><strong>Stream Interruptions by YouTube:</strong> YouTube may, at its sole discretion and without warning, abruptly end, block, or throttle live streams based on automated algorithms or manual review. The Provider is not responsible for these platform-initiated interruptions.</li>
-                            <li><strong>Force Majeure:</strong> The Provider is not liable for streaming downtime caused by unforeseeable events outside their control, including major data center failures, network outages, or acts of God.</li>
-                        </ul>
-                        
-                        <p class="font-semibold text-slate-800 mt-2">4. Indemnification</p>
-                        <p class="mb-2">The Client agrees to indemnify, defend, and hold harmless the Provider, its owners, and affiliates from and against any and all claims, liabilities, damages, losses, and expenses (including legal fees) arising from or in any way connected with the Client's content, including but not limited to claims of copyright infringement, defamation, or violation of YouTube Terms of Service.</p>
-                        
-                        <p class="font-semibold text-slate-800 mt-2">5. Service Termination</p>
-                        <p>Either party may terminate this service agreement at any time with 48 hours' written notice. The Provider reserves the right to immediately terminate service without refund if it discovers the Client is using the infrastructure to stream illegal content or content that facilitates severe harm.</p>
-                    </div>
-                    
-                    <div class="flex items-center space-x-3 text-sm">
-                        <input type="checkbox" id="disclaimerCheck" required class="h-5 w-5 rounded border-slate-300 bg-white text-red-600 focus:ring-red-500">
-                        <label for="disclaimerCheck" class="text-slate-700 select-none">
-                            I have read, understood, and agree to the <span class="font-medium text-red-600">Service Agreement & Liability Disclaimer</span>.
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Submission Options -->
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <!-- WhatsApp Submit Button -->
-                    <button type="button" onclick="submitViaWhatsApp()" id="waBtn" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl transition duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed" disabled>
-                        <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Send via WhatsApp
-                    </button>
-                    <!-- Google Form Submit Button -->
-                    <button type="button" onclick="submitViaGoogleForm()" id="gfBtn" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition duration-300 flex items-center justify-center disabled:opacity-50">
-                        <i class="fa-solid fa-file-lines mr-2"></i> Submit in Google Form
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 text-center text-slate-500 text-sm border-t border-slate-200">
-        <p>&copy; 2026-27 "24/7 YouTube Video Live Management Service - YTVLMS". All rights reserved.</p>
-    </footer>
-
-    <!-- Script to handle WhatsApp & Google Form routing with validation -->
-    <script>
-        const disclaimerCheck = document.getElementById('disclaimerCheck');
-        const waBtn = document.getElementById('waBtn');
-        const gfBtn = document.getElementById('gfBtn');
-
-        disclaimerCheck.addEventListener('change', function() {
-            if (this.checked) {
-                waBtn.disabled = false;
-                
-            } else {
-                waBtn.disabled = true;
-            }
-        });
-
-        function validateForm() {
-            const name = document.getElementById('clientName').value;
-            const phone = document.getElementById('clientPhone').value;
-            const channel = document.getElementById('clientChannel').value;
-            const video = document.getElementById('clientVideo').value;
-            const check = document.getElementById('disclaimerCheck').checked;
-
-            if (!name || !phone || !channel || !video) {
-                alert('Please fill out all required text fields.');
-                return false;
-            }
-
-            if (!check) {
-                alert('You must agree to the Service Disclaimer before submitting.');
-                return false;
-            }
-            return true;
-        }
-
-        function submitViaWhatsApp() {
-            if (!validateForm()) return;
-
-            const name = document.getElementById('clientName').value;
-            const phone = document.getElementById('clientPhone').value;
-            const channel = document.getElementById('clientChannel').value;
-            const video = document.getElementById('clientVideo').value;
-
-            const myWhatsAppNumber = "917731969824";
-
-            const message = `*New Stream Order Inquiry*%0A` +
-                            `*Name:* ${encodeURIComponent(name)}%0A` +
-                            `*Phone:* ${encodeURIComponent(phone)}%0A` +
-                            `*Channel:* ${encodeURIComponent(channel)}%0A` +
-                            `*Video Link:* ${encodeURIComponent(video)}`;
-
-            window.open(`https://wa.me/${myWhatsAppNumber}?text=${message}`, '_blank');
-        }
-
-        function submitViaGoogleForm() {
-          //  if (!validateForm()) return;
-
-            const googleFormURL = "https://forms.gle/mGdmb18fSrEVYZFc8";
-            window.open(googleFormURL, '_blank');
-        }
-    </script>
 </body>
 </html>
