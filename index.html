@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>24/7 Auto RTMP Live Stream Management</title>
+  <title>CLSM - Cloud Live Stream Management - 24/7 - YouTube or Any RTMP</title>
   <meta name="description" content="Run your RTMP live streams 24/7 on autopilot without hardware. Boost watch time & reach on YouTube, Facebook, Twitch & more. No local PC required.">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="24/7 Auto RTMP Live Stream Management">
+  <meta property="og:title" content="CLSM - Cloud Live Stream Management - 24/7 - YouTube or Any RTMP">
   <meta property="og:description" content="Run your RTMP live streams 24/7 on autopilot. No hardware, just provide your stream URL & key. Boost your channel's watch time & monetization.">
   <meta property="og:image" content="https://bhaskhard.github.io/lsm/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="24/7 Auto RTMP Live Stream Management">
+  <meta name="twitter:title" content="CLSM - Cloud Live Stream Management - 24/7 - YouTube or Any RTMP">
   <meta name="twitter:description" content="Run RTMP streams 24/7 on autopilot without hardware. Boost watch time on YouTube, Facebook, Twitch & more.">
   <meta name="twitter:image" content="https://bhaskhard.github.io/lsm/og-image.jpg">
 
@@ -401,14 +401,22 @@
         <div class="platform-badge badge-uptime"><i class="bi bi-activity"></i> 99.9% 24/7 Uptime</div>
       </div>
 
-      <!-- Action Buttons -->
-      <div class="broadcast-divider pt-4 pb-2 d-flex flex-wrap align-items-center gap-3">
-        <a class="btn btn-action-stream btn-stream-whatsapp" href="https://wa.me/917731969824?text=Hi%2C%20I%20want%20autopilot%20live%20for%20my%20channel" target="_blank" rel="noopener noreferrer">
-          <i class="bi bi-whatsapp fs-5"></i> Start on WhatsApp
-        </a>
-        <a class="btn btn-action-stream btn-stream-google" href="https://forms.gle/mGdmb18fSrEVYZFc8" target="_blank" rel="noopener noreferrer">
-          <i class="bi bi-ui-checks-grid fs-5"></i> Submit on GoogleForm
-        </a>
+      <!-- Action Buttons with Custom WhatsApp Message Box -->
+      <div class="broadcast-divider pt-4 pb-2">
+        <div class="mb-3" style="max-width: 400px;">
+          <label for="whatsappMsgTop" class="form-label small text-info fw-bold font-monospace">
+            <i class="bi bi-chat-text me-1"></i> Custom WhatsApp Message:
+          </label>
+          <input type="text" id="whatsappMsgTop" class="form-control bg-dark text-light border-secondary shadow-none" value="Hi, I want autopilot live for my channel">
+        </div>
+        <div class="d-flex flex-wrap align-items-center gap-3">
+          <button type="button" class="btn btn-action-stream btn-stream-whatsapp" onclick="sendWhatsApp('whatsappMsgTop')">
+            <i class="bi bi-whatsapp fs-5"></i> Start on WhatsApp
+          </button>
+          <a class="btn btn-action-stream btn-stream-google" href="https://forms.gle/mGdmb18fSrEVYZFc8" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-ui-checks-grid fs-5"></i> Submit on GoogleForm
+          </a>
+        </div>
       </div>
 
       <!-- Live Demos & Client Showcase -->
@@ -518,14 +526,22 @@
         </div>
       </div>
 
-      <!-- Secondary Call to Action (Bottom) -->
-      <div class="broadcast-divider mt-5 pt-4 pb-2 d-flex flex-wrap align-items-center gap-3">
-        <a class="btn btn-action-stream btn-stream-whatsapp" href="https://wa.me/917731969824?text=Hi%2C%20I%20want%20autopilot%20live%20for%20my%20channel" target="_blank" rel="noopener noreferrer">
-          <i class="bi bi-whatsapp fs-5"></i> Start on WhatsApp
-        </a>
-        <a class="btn btn-action-stream btn-stream-google" href="https://forms.gle/mGdmb18fSrEVYZFc8" target="_blank" rel="noopener noreferrer">
-          <i class="bi bi-broadcast fs-5"></i> Submit on GoogleForm
-        </a>
+      <!-- Secondary Call to Action (Bottom) with Custom WhatsApp Message Box -->
+      <div class="broadcast-divider mt-5 pt-4 pb-2">
+        <div class="mb-3" style="max-width: 400px;">
+          <label for="whatsappMsgBottom" class="form-label small text-info fw-bold font-monospace">
+            <i class="bi bi-chat-text me-1"></i> Custom WhatsApp Message:
+          </label>
+          <input type="text" id="whatsappMsgBottom" class="form-control bg-dark text-light border-secondary shadow-none" value="Hi, I want autopilot live for my channel">
+        </div>
+        <div class="d-flex flex-wrap align-items-center gap-3">
+          <button type="button" class="btn btn-action-stream btn-stream-whatsapp" onclick="sendWhatsApp('whatsappMsgBottom')">
+            <i class="bi bi-whatsapp fs-5"></i> Start on WhatsApp
+          </button>
+          <a class="btn btn-action-stream btn-stream-google" href="https://forms.gle/mGdmb18fSrEVYZFc8" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-broadcast fs-5"></i> Submit on GoogleForm
+          </a>
+        </div>
       </div>
 
       <!-- Footer & Diagnostics info -->
@@ -536,12 +552,24 @@
           <span class="stream-tag-badge text-white"><i class="bi bi-cpu text-info me-1"></i> ZERO CPU LOAD</span>
         </div>
         <div>
-          &copy; 2026 RTMP Live Engine &middot; Broadcast Studio
+          &copy; 2026 CLSM - Cloud Live Stream Management - 24/7 - YouTube or Any RTMP
         </div>
       </footer>
 
     </div>
   </main>
+
+  <!-- JavaScript to Handle Dynamic WhatsApp Message Routing -->
+  <script>
+    function sendWhatsApp(inputId) {
+      const phoneNumber = "917731969824";
+      const messageInput = document.getElementById(inputId);
+      const messageText = messageInput ? messageInput.value : "Hi, I want autopilot live for my channel";
+      const encodedMessage = encodeURIComponent(messageText);
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+    }
+  </script>
 
   <!-- Bootstrap 5 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
